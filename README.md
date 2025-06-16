@@ -45,14 +45,7 @@ A simple and modern web-based HLS (HTTP Live Streaming) player built using **HTM
 
 You can easily add more `.m3u8` HLS URLs by updating the `<select>` element in `index.html`.
 
-## 🛠️ Future Improvements (Suggestions)
-
-- Keyboard shortcuts for controls  
-- Picture-in-picture support  
-- Error handling and reconnection logic  
-- Dark mode toggle  
-
 ## 👤 Author
 
 **Mateusz Purol**  
-_MIPaC Project 2025_
+_MIPaC Project_
