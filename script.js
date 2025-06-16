@@ -158,44 +158,6 @@ function logRequest(url, type) {
     }
 }
 
-// Get user's IP and location
-async function getUserInfo() {
-    try {
-        // Get IP address
-        const ipResponse = await fetch('https://api.ipify.org?format=json');
-        const ipData = await ipResponse.json();
-        ipAddress = ipData.ip;
-        ipValue.textContent = ipAddress;
-        
-        // Get location based on IP
-        const geoResponse = await fetch(`https://ipapi.co/${ipAddress}/json/`);
-        const geoData = await geoResponse.json();
-        
-        countryCode = geoData.country_code;
-        countryName.textContent = geoData.country_name;
-        
-        // Set country flag
-        if (countryCode) {
-            countryFlag.src = `https://flagcdn.com/48x36/${countryCode.toLowerCase()}.png`;
-            countryFlag.alt = `${geoData.country_name} flag`;
-        }
-        
-        // Simulate access control
-        const blockedCountries = ['RU', 'CN', 'KP', 'IR', 'SY'];
-        if (blockedCountries.includes(countryCode)) {
-            accessStatus.textContent = 'Access Denied: Your region is restricted';
-            accessStatus.className = 'access-status access-denied';
-        } else {
-            accessStatus.textContent = 'Access Granted: You are in an allowed region';
-            accessStatus.className = 'access-status access-granted';
-        }
-    } catch (error) {
-        console.error('Error fetching user info:', error);
-        ipValue.textContent = 'Unable to detect';
-        countryName.textContent = 'Unable to detect';
-    }
-}
-
 // Event listeners
 playBtn.addEventListener('click', () => {
     video.play();
@@ -212,7 +174,6 @@ streamSelect.addEventListener('change', () => {
 // Initialize everything when the page loads
 window.addEventListener('load', () => {
     initPlayer();
-    getUserInfo();
     
     // Update stream info periodically
     setInterval(updateStreamInfo, 2000);

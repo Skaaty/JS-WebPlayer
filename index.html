@@ -10,64 +10,52 @@
 </head>
 
 <body>
-  <div id="player-container">
-    <div class="video-section">
-      <video id="video-player" controls></video>
-      <div class="controls">
-        <button id="play-btn">Play</button>
-        <button id="pause-btn">Pause</button>
-        <select id="stream-select">
-          <option value="https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8">Big Buck Bunny</option>
-          <option value="https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8">Sintel</option>
-          <option value="https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8">Live Stream</option>
-        </select>
+  <div class="container">
+    <div id="player-container">
+      <div class="video-section">
+        <video id="video-player" controls></video>
+        <div class="controls">
+          <button id="play-btn">Play</button>
+          <button id="pause-btn">Pause</button>
+          <select id="stream-select">
+            <option value="https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8">Big Buck Bunny</option>
+            <option value="https://bitdash-a.akamaihd.net/content/MI201109210084_1/m3u8s/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.m3u8">Parkour</option>
+            <option value="https://test-streams.mux.dev/pts_shift/master.m3u8">Tears of Steel</option>
+          </select>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="info-section">
-    <h2>Stream info</h2>
-    <div class="info-grid">
-      <div class="info-card">
-        <div class="info-label">Bitrate</div>
-        <div id="bitrate-value" class="info-value">0 Kbps</div>
+    <div class="info-section">
+      <h2>Stream info</h2>
+      <div class="info-grid">
+        <div class="info-card">
+          <div class="info-label">Bitrate</div>
+          <div id="bitrate-value" class="info-value">0 Kbps</div>
+        </div>
+        <div class="info-card">
+          <div class="info-label">Resolution</div>
+          <div id="resolution-value" class="info-value">0x0</div>
+        </div>
+        <div class="info-card">
+          <div class="info-label">Video Codec</div>
+          <div id="video-codec" class="info-value">-</div>
+        </div>
+        <div class="info-card">
+          <div class="info-label">Audio Codec</div>
+          <div id="audio-codec" class="info-value">-</div>
+        </div>
       </div>
-      <div class="info-card">
-        <div class="info-label">Resolution</div>
-        <div id="resolution-value" class="info-value">0x0</div>
-      </div>
-      <div class="info-card">
-        <div class="info-label">Video Codec</div>
-        <div id="video-codec" class="info-value">-</div>
-      </div>
-      <div class="info-card">
-        <div class="info-label">Audio Codec</div>
-        <div id="audio-codec" class="info-value">-</div>
-      </div>
+      <h3>Switch Bitrate</h3>
+      <div id="quality-controls" class="quality-controls"></div>
     </div>
-    <h3>Switch Bitrate</h3>
-    <div id="quality-controls" class="quality-controls"></div>
   </div>
   <div class="request-log">
     <h2>Network Requests</h2>
     <div id="log-container" class="log-container"></div>
   </div>
-
-  <div class="geo-section">
-    <h2>Access Control</h2>
-    <div class="ip-display">
-      <span>Your IP:</span>
-      <span id="ip-value">Detecting...</span>
-    </div>
-    <div class="country-display">
-      <span>Country:</span>
-      <img id="country-flag" class="country-flag" src="" alt="flag">
-      <span id="country-name">Detecting...</span>
-    </div>
-    <div id="access-status" class="access-status">
-      
-    </div>
-  </div>
-
+  <footer>
+    Mateusz Purol
+  </footer>
   <script src="script.js" defer></script>
 </body>
 
