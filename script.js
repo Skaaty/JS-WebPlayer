@@ -114,7 +114,6 @@ function generateQualityControls() {
     }
 }
 
-// Update stream information display
 function updateStreamInfo() {
     if (hls && hls.levels && hls.levels.length > 0 && currentLevel >= 0) {
         const level = hls.levels[currentLevel];
